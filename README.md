@@ -7,3 +7,6 @@
     A quote of the day or simmilar  
     A news widget  
     > maybe a widget with cute animals?  
+
+### sketch
+![sketch](./pictures/sketch.png)
