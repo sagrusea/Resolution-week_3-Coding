@@ -2,8 +2,9 @@
 
 ### Feature list:
 - [x] Current time  
--  [ ] dynamic background image  
-- [ ] weather and aqi  
+- [x] dynamic background image  
+- [x] weather and aqi  
+- [x] real feel temp
 - [ ] A quote of the day or simmilar  
 - [ ] A news widget  
 > maybe a widget with cute animals?  

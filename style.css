@@ -1,0 +1,37 @@
+body, h1, P, span { 
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px
+}
+
+#bg {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: flow-root;
+}
+
+.top {
+    margin-top: 2vh;
+    background-color: rgba(130, 131, 132, 0.29);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    max-width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.top > h1 {
+    color: whitesmoke;
+    font-size: 10vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+#realFeelContainer {
+    margin-left: 10vw;
+    padding-bottom: 2vh;
+}
