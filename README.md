@@ -1,7 +1,7 @@
 # Resolution-week_3-Coding
 
 ### Feature list:
-[x]Current time  
+[x] Current time  
 dynamic background image  
 weather and aqi  
 A quote of the day or simmilar  
