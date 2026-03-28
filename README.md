@@ -5,8 +5,8 @@
 - [x] dynamic background image  
 - [x] weather and aqi  
 - [x] real feel temp
-- [ ] A quote of the day or simmilar  
-- [ ] A news widget  
+- [x] A quote of the day or simmilar  
+- [x] A news widget  
 > maybe a widget with cute animals?  
 
 ### sketch
