@@ -26,7 +26,7 @@ async function getInfo() {
         const [aqiResponse, tempResponse, quoteResponse,topStoryId] = await Promise.all([
             fetch('https://air-quality-api.open-meteo.com/v1/air-quality?latitude=50.088&longitude=14.4208&current=european_aqi'),
             fetch('https://api.open-meteo.com/v1/forecast?latitude=50.088&longitude=14.4208&current=temperature_2m,apparent_temperature'),
-            fetch('http://api.adviceslip.com/advice'),
+            fetch('https://api.adviceslip.com/advice'),
             fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
         ]);
         const aqiJson = await aqiResponse.json();
