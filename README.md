@@ -7,8 +7,8 @@
 - [x] real feel temp
 - [x] A quote of the day or simmilar  
 - [x] A news widget
-- [ ] settings to set time format, and location
-- [ ] refine the look
+- [x] settings to set time format, and location
+- [x] refine the look
 > maybe a widget with cute animals?  
 
 ### sketch
