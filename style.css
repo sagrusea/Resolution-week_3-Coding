@@ -115,3 +115,11 @@ input {
     margin-bottom: 1vh;
     font-size: 1rem;
 }
+#save {
+    background-color: rgba(25, 174, 25, 0.712);
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
