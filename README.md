@@ -1,5 +1,7 @@
 # Resolution-week_3-Coding
 
+A simple but good looking homepage made with HTML, CSS, JS
+[link to try it out](https://sagrusea.github.io/Resolution-week_3-Coding/)
 ### Feature list:
 - [x] Current time  
 - [x] dynamic background image  
