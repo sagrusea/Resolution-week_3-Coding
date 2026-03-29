@@ -44,7 +44,7 @@ body, h1, P, span {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     max-width: 40vw;
-    min-width: 10vw;
+    min-width: 100px;
     min-height: 10vh;
     max-height: fit-content;
     border-radius: 10px;
@@ -82,7 +82,21 @@ body, h1, P, span {
     justify-content: space-between;
     align-items: stretch;
     align-self: flex-end;
-    gap: 70vw;
-    width: 100%;
+    width: 100vw;
     margin-bottom: 1vh;
+}
+a {
+    color: aqua;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    background: none;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+}
+.hidden {
+    display: none;
 }

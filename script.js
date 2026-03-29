@@ -6,9 +6,14 @@ const realFeelSpan = document.getElementById("realFeel");
 const quotetextContainer = document.getElementById("quoteContent");
 const newsHeader = document.getElementById("head");
 const newsLink = document.getElementById("newscontent");
+const settingsButton = document.getElementById("settings");
+const settingsModal = document.getElementById("settingsModal");
 let aqi = null;
 let temp = null;
 let realFeel = null;
+let lat = localStorage.getItem("userLat") || 50.088;
+let long = localStorage.getItem("userLong") || 14.420;
+let settingsOpen = false;
 
 console.log("hello!");
 
@@ -24,8 +29,8 @@ async function getInfo() {
 
     try {
         const [aqiResponse, tempResponse, quoteResponse,topStoryId] = await Promise.all([
-            fetch('https://air-quality-api.open-meteo.com/v1/air-quality?latitude=50.088&longitude=14.4208&current=european_aqi'),
-            fetch('https://api.open-meteo.com/v1/forecast?latitude=50.088&longitude=14.4208&current=temperature_2m,apparent_temperature'),
+            fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${long}&current=european_aqi`),
+            fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m,apparent_temperature`),
             fetch('https://api.adviceslip.com/advice'),
             fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
         ]);
@@ -52,4 +57,14 @@ async function getInfo() {
 addEventListener("DOMContentLoaded", (event) => {
     getInfo();
     setInterval(getInfo, 1800000);
+});
+
+settingsButton.addEventListener("mousedown",(click) => {
+    if (settingsOpen) {
+        settingsModal.classList.add("hidden");
+        settingsOpen = !settingsOpen;
+    } else {
+        settingsModal.classList.remove("hidden");
+        settingsOpen = !settingsOpen;
+    };
 });

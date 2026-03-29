@@ -11,14 +11,21 @@
     <div id="bg">
         <div id="layout">
             <div class="top">
-                <h1 id="time">12:35</h1>
+                <h1 id="time">12:35</h1><button id="settings">⚙️</button>
                 <p>AQI: <span id="AQI">100</span> | <span id="temp">10</span>°C</p>
                 <p id="realFeelContainer">- real feel <span id="realFeel">10</span>°C</p>
+            </div>
+            <div class="hidden" id="settingsModal">
+                <input type="text" name="" id="city">
+                <label for="lat">Latitude:</label>
+                <input id="lat" type="number" placeholder="50.088">
+                <label for="long">Longitude:</label>
+                <input id="long" type="number" placeholder="14.420">
             </div>
             <div class="bottom">
                 <div class="news">
                     <h2 id="head">Hello</h2>
-                    <p ><a id="newscontent" href="">link</a></p>
+                    <a id="newscontent" href="">link</a>
                 </div>
                 <div class="quote">
                     <p id="quoteContent">Are we real?</p>
