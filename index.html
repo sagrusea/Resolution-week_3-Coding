@@ -12,15 +12,17 @@
         <div id="layout">
             <div class="top">
                 <h1 id="time">12:35</h1><button id="settings">⚙️</button>
-                <p>AQI: <span id="AQI">100</span> | <span id="temp">10</span>°C</p>
+                <p class="aqi">AQI: <span id="AQI" class="aqi">100</span> | <span id="temp">10</span>°C</p>
                 <p id="realFeelContainer">- real feel <span id="realFeel">10</span>°C</p>
             </div>
             <div class="hidden" id="settingsModal">
-                <input type="text" name="" id="city">
+                <label for="city">City</label>
+                <input type="search" id="citySearch" placeholder="Enter a city, like Prague"> <br>
                 <label for="lat">Latitude:</label>
                 <input id="lat" type="number" placeholder="50.088">
                 <label for="long">Longitude:</label>
                 <input id="long" type="number" placeholder="14.420">
+                <button id="save">Save</button>
             </div>
             <div class="bottom">
                 <div class="news">

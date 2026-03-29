@@ -25,8 +25,6 @@ setInterval(() => {
 },100)
 
 async function getInfo() {
-    
-
     try {
         const [aqiResponse, tempResponse, quoteResponse,topStoryId] = await Promise.all([
             fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${long}&current=european_aqi`),
@@ -45,7 +43,23 @@ async function getInfo() {
         const newsData = await fetch(`https://hacker-news.firebaseio.com/v0/item/${topStoryIdJson[0]}.json`);
         const newsDataJson = await newsData.json();
         newsHeader.innerText = newsDataJson.title;
-        newsLink.href = newsDataJson.url ;
+        newsLink.href = newsDataJson.url;
+        switch (true) {
+            case (aqi <= 20):
+                aqiSpan.style.color = "#00ff88";
+                break;
+            case (aqi <= 40):
+                aqiSpan.style.color = "#f1c40f";
+                break;
+            case (aqi <= 60):
+                aqiSpan.style.color = "#e67e22";
+                break;
+            case (aqi <= 80):
+                aqiSpan.style.color = "#e74c3c";
+                break;
+            default:
+                aqiSpan.style.color = "#9b59b6";
+        }
     } catch (error) {
         console.error(error);
     }
@@ -53,6 +67,23 @@ async function getInfo() {
     aqiSpan.innerText = aqi;
     tempSpan.innerText = temp;
     realFeelSpan.innerText = realFeel;
+};
+async function searchCity() {
+    const cityName = document.getElementById("citySearch").value;
+    if (!cityName) return;
+
+    try {
+        const cityResponse = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}&count=1`);
+        const cityData = await cityResponse.json();
+
+        if (cityData.results) {
+            const result = cityData.results[0];
+            document.getElementById("lat").value = result.latitude;
+            document.getElementById("long").value = result.longitude;
+        }
+    } catch (error) {
+        console.error(error);
+    }
 }
 addEventListener("DOMContentLoaded", (event) => {
     getInfo();
@@ -67,4 +98,21 @@ settingsButton.addEventListener("mousedown",(click) => {
         settingsModal.classList.remove("hidden");
         settingsOpen = !settingsOpen;
     };
+});
+document.getElementById("citySearch").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") searchCity();
+});
+document.getElementById("save").addEventListener("click", () => {
+    const finalLat = document.getElementById("lat").value;
+    const finalLong = document.getElementById("long").value;
+
+    if (finalLat && finalLong) {
+        localStorage.setItem("userLat", finalLat);
+        localStorage.setItem("userLong", finalLong);
+        lat = finalLat;
+        long = finalLong;
+        getInfo();
+        settingsModal.classList.add("hidden");
+        settingsOpen = !settingsOpen;
+    }
 });
